@@ -22,4 +22,11 @@ console.log(RANDOM_SONG());
 // console.log(`Checking array: ${Array.isArray(songs)}`);
 
 
+//Handling cancel button
 
+
+
+// instead of on H1 do it on cancel button! 
+const clickFunctions = () => alert ("Done playing already?");
+
+document.querySelector("h1").onclick = () => clickFunctions();
