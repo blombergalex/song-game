@@ -1,0 +1,11 @@
+Break down project in pseudo code 
+---------------------------------------
+
+My song guessing game
+
+Computer chooses 
+    - random string of song out of array with multiple songs
+
+Player 
+    - starts game (start button with onclick event)
+    - 
