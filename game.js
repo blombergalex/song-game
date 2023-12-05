@@ -1,19 +1,30 @@
-let songs = [
+const songs = [
     "Another one bites the dust",
-    "Jennie let me love you"
-]
+    "Hit the road Jack",
+    "I want to break free",
+    "Ah ha ha ha stayin alive",
+    "Gimme gimme gimme a man after midnight",
+];
 
-
-//function for choosing random song from array of songs:
-const RANDOM_SONG = () => {
+// Function generating song
+const randomSong = () => {
     return songs[Math.floor(Math.random() * songs.length)];
 }
 
-console.log(RANDOM_SONG());
+// console.log(randomSong()); 
 
+const displaySong = () => {
+    const newPara  = document.createElement("p");
+    newPara.innerText = (randomSong());
+    document.querySelector(".song-para").appendChild(newPara);
+}
+
+displaySong()
+
+
+    
 
 // create function that lets user guess for word in song
-
 
 
 
@@ -30,3 +41,10 @@ console.log(RANDOM_SONG());
 const clickFunctions = () => alert ("Done playing already?");
 
 document.querySelector("h1").onclick = () => clickFunctions();
+
+
+
+
+
+
+

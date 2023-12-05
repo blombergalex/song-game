@@ -4,8 +4,15 @@ Break down project in pseudo code
 My song guessing game
 
 Computer chooses 
-    - random string of song out of array with multiple songs
+    - random string of song out of array with multiple songs 
+    - computer displays amount of words with lines (seven words in lyrics = seven empty lines)
 
 Player 
-    - starts game (start button with onclick event)
-    - 
+    - starts game (start button with click event)
+        - wrap the whole thing in alert with "Do you want to play?"
+        
+    - player guesses word for word:
+        - computer listens to all of user's input, any correct words fill in empty lines. Incorrect words = wrong answer, lose life?
+
+Extras:
+- option to play a few seconds of an instrumental version of song

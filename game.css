@@ -1,0 +1,44 @@
+:root{
+    --primary-bg-color: #A3B18A;
+    --primary-text-color: #3A5A40;
+    --contrast-color: #DAD7CD;
+    --secondary-text-color: #dadcdb;
+    --secondary-bg-color: #588157;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+}
+
+header {
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-text-color);
+    text-align: center;
+}
+
+section h4 {
+    color: var(--primary-text-color);
+}
+
+.game-box {
+    color: var(--primary-text-color-color);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-bg-color);
+    justify-content: center;
+}
+
+.song-para {
+    color: var(--primary-text-color);
+}
