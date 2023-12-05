@@ -10,7 +10,7 @@ Computer chooses
 Skapa en funktion som 
 1. tar den genererade random sången
 2. splittar sången (som är en string) till separata ord i en array ✅
-3. Tar number av values in the array and create _ for each value
+3. Tar number av values in the array and create _ for each value - genom att välja varje value från arrayn
 4. Display each _ in the html. 
 
 skapa annan funktion som omvandlar "_" till ord när
@@ -24,9 +24,16 @@ Player
     - player guesses word for word:
         - computer listens to all of user's input, any correct words fill in empty lines. Incorrect words = wrong answer, lose life?
 
+    - har möjlighet att gissa utifrån 25 ord som kan ingå i sången - knappar med ord som genereras från listan av sånger och ord! 
+        istället för att användaren behöver skriva in hela ord själv (obs är det krav på user input?? Kan jag använda knappar?)
+
 skapa möjlighet för användare att gissa
-1. input field för att skriva ord - tangentbord visas alltid. (fixa för mobile)
-    - 
+alternativ 1. input field för att skriva ord - tangentbord visas alltid. (fixa för mobile)
+    se https://www.altcademy.com/blog/how-to-get-user-input-in-javascript/ 
+
+alternativ 2. ord-knappar som alternativ som användaren kan klicka på. Lägg till i listan över låtar så varje låt också 
+är knuten till en rad ord där ett antal är rätt och ett antal är random (antingen manauell eller att det genereras 
+t ex 10-15 till ord på random från en annan array som används för varje omgång med ny låt.)
 
 
 
@@ -36,3 +43,4 @@ When creating a new array out of info from user input, use .isArray to check tha
 
 Extras:
 - option to play a few seconds of an instrumental version of song
+- after three wrong guesses, encouraging message such as "You'll get it soon, try again!"

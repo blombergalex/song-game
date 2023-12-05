@@ -10,20 +10,29 @@ const songs = [
 const randomSong = () => {
     return songs[Math.floor(Math.random() * songs.length)];
 }
-// Turn each word into line
 
-const separateWords = () => {
-    console.log((randomSong()).split(' '));
-    
+
+// Split song-string 
+
+let separateWords = (randomSong().split(' '));
+console.log(separateWords);
+// console.log(separateWords[2]);
+
+
+// turn each value in array to placeHolder:
+
+ const createWordPlaceholder = () => {
+    const placeHolder =  document.createElement("div");
+    placeHolder.innerText = "_";
+    document.querySelector(".song-para").appendChild(placeHolder);
 }
 
-
-separateWords()
-
-// skapa wordIndicator (_) för varje ord
+separateWords.forEach(createWordPlaceholder);
 
 
+// Replace placeholder with correct word
 
+console.log(user-input);
 
 
 
