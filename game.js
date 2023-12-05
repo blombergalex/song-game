@@ -10,27 +10,43 @@ const songs = [
 const randomSong = () => {
     return songs[Math.floor(Math.random() * songs.length)];
 }
+// Turn each word into line
 
-// console.log(randomSong()); 
+const separateWords = () => {
+    console.log((randomSong()).split(' '));
+    
+}
 
+
+separateWords()
+
+// skapa wordIndicator (_) för varje ord
+
+
+
+
+
+
+// Function displaying song in frontend
 const displaySong = () => {
     const newPara  = document.createElement("p");
     newPara.innerText = (randomSong());
     document.querySelector(".song-para").appendChild(newPara);
 }
 
-displaySong()
-
-
-    
-
-// create function that lets user guess for word in song
+// displaySong()
 
 
 
-//When creating a new array out of info from user input, use .isArray to check that I am actaully using an array. 
 
-// console.log(`Checking array: ${Array.isArray(songs)}`);
+
+
+
+
+
+
+
+
 
 
 //Handling cancel button

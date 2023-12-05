@@ -7,12 +7,32 @@ Computer chooses
     - random string of song out of array with multiple songs 
     - computer displays amount of words with lines (seven words in lyrics = seven empty lines)
 
+Skapa en funktion som 
+1. tar den genererade random sången
+2. splittar sången (som är en string) till separata ord i en array ✅
+3. Tar number av values in the array and create _ for each value
+4. Display each _ in the html. 
+
+skapa annan funktion som omvandlar "_" till ord när
+userinput överensstämmer med vilket värde som helst i randomSong array
+visa ordet istället för _ i frontend
+
 Player 
     - starts game (start button with click event)
         - wrap the whole thing in alert with "Do you want to play?"
         
     - player guesses word for word:
         - computer listens to all of user's input, any correct words fill in empty lines. Incorrect words = wrong answer, lose life?
+
+skapa möjlighet för användare att gissa
+1. input field för att skriva ord - tangentbord visas alltid. (fixa för mobile)
+    - 
+
+
+
+Notes
+When creating a new array out of info from user input, use .isArray to check that I am actaully using an array. 
+
 
 Extras:
 - option to play a few seconds of an instrumental version of song
