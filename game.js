@@ -30,10 +30,15 @@ console.log(separateWords);
 separateWords.forEach(createWordPlaceholder);
 
 
-// Replace placeholder with correct word
+// Get user input 
 
-console.log(user-input);
+document.querySelector("#user-interaction").addEventListener("submit", function (event) {
+    event.preventDefault();
+    let guess = document.querySelector("#user-input").value;
+    console.log("User guess is: " + guess);
+});
 
+// Figure out how form is cleared without page being refreshed after user guess
 
 
 // Function displaying song in frontend
