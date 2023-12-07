@@ -8,13 +8,17 @@ Computer chooses
     - computer displays amount of words with lines (seven words in lyrics = seven empty lines)
 
 Skapa en funktion som 
-1. tar den genererade random sången
+1. tar den genererade random sången ✅
 2. splittar sången (som är en string) till separata ord i en array ✅
-3. Tar number av values in the array and create _ for each value - genom att välja varje value från arrayn
-4. Display each _ in the html. 
+3. Tar number av values in the array and create _ for each value - genom att välja varje value från arrayn ✅
+4. Display each _ in the html. ✅
 
-skapa annan funktion som omvandlar "_" till ord när
-userinput överensstämmer med vilket värde som helst i randomSong array
+skapa annan funktion som omvandlar "_" till ord när userinput överensstämmer med ett värde i randomSong array:
+    1. ta värdet på user input 
+    2. ställ värdet mot varje värde i sångArrayn genom att loopa igenom
+    3. om userInput == värde i sång Array => lägg till class på ordet i the original songArray som gör att den visas i frontend, 
+        else - meddela att det är fel (med text som poppar upp?)
+
 visa ordet istället för _ i frontend
 
 Player 
@@ -35,12 +39,13 @@ alternativ 2. ord-knappar som alternativ som användaren kan klicka på. Lägg t
 är knuten till en rad ord där ett antal är rätt och ett antal är random (antingen manauell eller att det genereras 
 t ex 10-15 till ord på random från en annan array som används för varje omgång med ny låt.)
 
-
-
+kolla user input mot ord
+- ev använda string method includes to check if the string of the correct word includes what the user typed
+    (alt contains depending on if I'm handling a string or array.)
 Notes
 When creating a new array out of info from user input, use .isArray to check that I am actaully using an array. 
 
 
 Extras:
-- option to play a few seconds of an instrumental version of song
+- option to play a few seconds of an instrumental version of song - see drumkit challenge från Udemy kurs för hur spela mp3-fil
 - after three wrong guesses, encouraging message such as "You'll get it soon, try again!"
