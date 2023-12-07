@@ -18,6 +18,7 @@ let separateWords = (randomSong().split(' '));
 console.log(separateWords);
 console.log("Is separateWords an array: " + Array.isArray(separateWords));
 
+
 // turn each value in array to placeHolder:
 
  const createWordPlaceholder = () => {
@@ -30,17 +31,31 @@ separateWords.forEach(createWordPlaceholder);
 
 
 // Get user input 
-let userInput;
+
+let userInput; 
+
 document.querySelector("#user-interaction").addEventListener("submit", function (event) {
     event.preventDefault();
     userInput = document.querySelector("#user-input").value;
     console.log("User guessed: " + userInput);
+
+    if (separateWords.includes(userInput)) {
+        console.log("Song includes ${userInput}")
+    }
 });
+
+
 
 
 // Compare user input to array
 
 // använd separateWords och userInput  
+
+let song = separateWords;
+console.log(separateWords);
+console.log(userInput);
+
+console.log(song.includes (userInput));     
 
 
 let correctGuesses = [];
@@ -52,11 +67,15 @@ if (separateWords.includes(userInput)) {
     console.log("Song includes: " + userInput);
 };  
 
+
+
 // TRIAL AND ERROR
 
 
 
 // // Get user input (assuming it is stored in a variable called userInput)
+
+// fruits = ["banana", "apple", "grape", "grapefruit", "kiwi"];
 // const userFruit = prompt("Enter a fruit:");
 
 // // Check if the userInput is in the array
