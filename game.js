@@ -30,7 +30,31 @@ console.log("Is separateWords an array: " + Array.isArray(separateWords));
 separateWords.forEach(createWordPlaceholder);
 
 
-// Get user input 
+//New solution
+let correctGuesses = [];
+
+// // Get user input 
+// userInput = document.querySelector("#user-input");
+// document.querySelector("#user-interaction").addEventListener("submit", function (event) {
+//     event.preventDefault();
+//     console.log(userInput);
+//     // if (separateWords.includes(userInput)) {
+//     //     // correctGuesses.push(userInput);
+//     //     console.log("Song includes: " + userInput);
+//     // };  
+
+//     // correctGuesses.push(userInput);
+// });
+
+
+
+// console.log ("Correct guess: " + correctGuesses);
+
+
+
+
+
+// in main: 
 
 let userInput; 
 
@@ -40,11 +64,14 @@ document.querySelector("#user-interaction").addEventListener("submit", function 
     console.log("User guessed: " + userInput);
 
     if (separateWords.includes(userInput)) {
-        console.log("Song includes ${userInput}")
+        console.log("Song includes " + userInput)
+        correctGuesses.push(userInput);
+        console.log(correctGuesses);
     }
 });
 
-
+console.log(userInput);
+console.log(correctGuesses);
 
 
 // Compare user input to array
@@ -57,15 +84,6 @@ console.log(userInput);
 
 console.log(song.includes (userInput));     
 
-
-let correctGuesses = [];
-console.log ("Correct guess: " + correctGuesses);
-
-
-if (separateWords.includes(userInput)) {
-    // correctGuesses.push(userInput);
-    console.log("Song includes: " + userInput);
-};  
 
 
 
