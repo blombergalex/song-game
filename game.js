@@ -1,9 +1,9 @@
 const songs = [
-    "Another one bites the dust",
-    "Hit the road Jack",
-    "I want to break free",
-    "Ah ha ha ha stayin alive",
-    "Gimme gimme gimme a man after midnight",
+    "another one bites the dust",
+    "hit the road jack",
+    "i want to break free",
+    "ah ha ha ha stayin alive",
+    "gimme gimme gimme a man after midnight",
 ];
 
 // Function generating song
@@ -30,8 +30,9 @@ console.log("Is separateWords an array: " + Array.isArray(separateWords));
 separateWords.forEach(createWordPlaceholder);
 
 
-//New solution
+// check right guesses
 let correctGuesses = [];
+let wrongGuesses = [];
 let userInput; 
 
 document.querySelector("#user-interaction").addEventListener("submit", function (event) {
@@ -39,21 +40,29 @@ document.querySelector("#user-interaction").addEventListener("submit", function 
     userInput = document.querySelector("#user-input").value;
     console.log("User guessed: " + userInput);
 
-    if (separateWords.includes(userInput)) {
+    if (separateWords.includes((userInput).toLowerCase())) {
         console.log("Song includes " + userInput)
         correctGuesses.push(userInput);
         console.log(correctGuesses);
-    }
-});
+    } else if (!separateWords.includes((userInput).toLowerCase())) {
+        wrongGuesses.push(userInput);
+        console.log(wrongGuesses);
+}});
 
 console.log(userInput);
 console.log(correctGuesses);
 
+// user input = separateWords = user is right 
 
-// Compare user input to array
+const userIsRight = () => {
+    if (correctGuesses.includes(separateWords)) {
+        console.log("USER WON THIS ROUND!");
+    } else if ((wrongGuesses.length) > ((separateWords.length) + 5)) {
+        console.log("Too many guesses, user lost");
+    }
+}
 
-// använd separateWords och userInput  
-
+userIsRight();
 
 // CLEARING USER INPUT
 // write function that either loops through input and do value == ' ' - or just do value = ' '

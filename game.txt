@@ -46,6 +46,14 @@ Notes
 When creating a new array out of info from user input, use .isArray to check that I am actaully using an array. 
 
 
+while loop: 
+do {visa meddelande om att enter guess}
+while userInput !== correctGuesses {
+    visa meddelande om att fortsätta gissa
+}. /
+Använd do while loop för att det ska köras även innan första user input! 
+
 Extras:
 - option to play a few seconds of an instrumental version of song - see drumkit challenge från Udemy kurs för hur spela mp3-fil
 - after three wrong guesses, encouraging message such as "You'll get it soon, try again!"
+- option to choose level easy or hard. Hard being a line from another part than lyrics. 
