@@ -21,7 +21,7 @@ console.log("Is separateWords an array: " + Array.isArray(separateWords));
 
 // turn each value in array to placeHolder:
 
- const createWordPlaceholder = () => {
+ const createWordPlaceholder = (word) => {
     const placeHolder =  document.createElement("div");
     placeHolder.innerText = "_";
     document.querySelector(".song-para").appendChild(placeHolder);
@@ -39,6 +39,7 @@ document.querySelector("#user-interaction").addEventListener("submit", function 
     event.preventDefault();
     userInput = document.querySelector("#user-input").value;
     console.log("User guessed: " + userInput);
+    document.querySelector("#user-input").value = '';
 
     if (separateWords.includes((userInput).toLowerCase())) {
         console.log("Song includes " + userInput)
@@ -52,25 +53,6 @@ document.querySelector("#user-interaction").addEventListener("submit", function 
 console.log(userInput);
 console.log(correctGuesses);
 
-// user input = separateWords = user is right 
-
-const userIsRight = () => {
-    if (correctGuesses.includes(separateWords)) {
-        console.log("USER WON THIS ROUND!");
-    } else if ((wrongGuesses.length) > ((separateWords.length) + 5)) {
-        console.log("Too many guesses, user lost");
-    }
-}
-
-userIsRight();
-
-// CLEARING USER INPUT
-// write function that either loops through input and do value == ' ' - or just do value = ' '
-// const clearInput = () => document.querySelector("#user-input").value === '';
-//     clearInput();
-
-
-
 // Function displaying song in frontend - use with adding class to display word when userInput === word of song string
 const displaySong = () => {
     const newPara  = document.createElement("p");
@@ -78,8 +60,9 @@ const displaySong = () => {
     document.querySelector(".song-para").appendChild(newPara);
 }
 
-// displaySong()
+const displayCorrectGuess = () => {
 
+}
 
 //Handling cancel button
 
