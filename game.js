@@ -32,30 +32,6 @@ separateWords.forEach(createWordPlaceholder);
 
 //New solution
 let correctGuesses = [];
-
-// // Get user input 
-// userInput = document.querySelector("#user-input");
-// document.querySelector("#user-interaction").addEventListener("submit", function (event) {
-//     event.preventDefault();
-//     console.log(userInput);
-//     // if (separateWords.includes(userInput)) {
-//     //     // correctGuesses.push(userInput);
-//     //     console.log("Song includes: " + userInput);
-//     // };  
-
-//     // correctGuesses.push(userInput);
-// });
-
-
-
-// console.log ("Correct guess: " + correctGuesses);
-
-
-
-
-
-// in main: 
-
 let userInput; 
 
 document.querySelector("#user-interaction").addEventListener("submit", function (event) {
@@ -78,32 +54,6 @@ console.log(correctGuesses);
 
 // använd separateWords och userInput  
 
-let song = separateWords;
-console.log(separateWords);
-console.log(userInput);
-
-console.log(song.includes (userInput));     
-
-
-
-
-// TRIAL AND ERROR
-
-
-
-// // Get user input (assuming it is stored in a variable called userInput)
-
-// fruits = ["banana", "apple", "grape", "grapefruit", "kiwi"];
-// const userFruit = prompt("Enter a fruit:");
-
-// // Check if the userInput is in the array
-// if (fruits.includes(userFruit)) {
-//     console.log("The array contains the fruit: " + userFruit);
-// } else {
-//     console.log("The array does not contain the fruit: " + userFruit);
-// }
-
-
 
 // CLEARING USER INPUT
 // write function that either loops through input and do value == ' ' - or just do value = ' '
@@ -120,18 +70,6 @@ const displaySong = () => {
 }
 
 // displaySong()
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //Handling cancel button
