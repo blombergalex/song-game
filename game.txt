@@ -20,6 +20,10 @@ skapa annan funktion som omvandlar "_" till ord när userinput överensstämmer 
         else - meddela att det är fel (med text som poppar upp?)
 
 visa ordet istället för _ i frontend
+hantera user input
+- toLowerCase ✅
+- gör så blanks (white space) är tillåtet och gissning ändå blir rätt
+
 
 Player 
     - starts game (start button with click event)
@@ -42,8 +46,13 @@ t ex 10-15 till ord på random från en annan array som används för varje omg�
 kolla user input mot ord
 - ev använda string method includes to check if the string of the correct word includes what the user typed
     (alt contains depending on if I'm handling a string or array.)
+
+Use jQuery .each method to get index of array!!!!!
+
 Notes
 When creating a new array out of info from user input, use .isArray to check that I am actaully using an array. 
+
+
 
 
 while loop: 
@@ -52,6 +61,10 @@ while userInput !== correctGuesses {
     visa meddelande om att fortsätta gissa
 }. /
 Använd do while loop för att det ska köras även innan första user input! 
+OBS! Inte nödvändigt om jag inte använder prompt. Ska vara med i prompt game pga prompten stoppar while loop,
+as soon as the prompt is resolved the while loop continues. Can't use a while loop in the console. 
+
+
 
 Extras:
 - option to play a few seconds of an instrumental version of song - see drumkit challenge från Udemy kurs för hur spela mp3-fil

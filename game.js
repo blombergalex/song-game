@@ -21,7 +21,7 @@ console.log("Is separateWords an array: " + Array.isArray(separateWords));
 
 // turn each value in array to placeHolder:
 
- const createWordPlaceholder = (word) => {
+ const createWordPlaceholder = () => {
     const placeHolder =  document.createElement("div");
     placeHolder.innerText = "_";
     document.querySelector(".song-para").appendChild(placeHolder);
@@ -29,11 +29,22 @@ console.log("Is separateWords an array: " + Array.isArray(separateWords));
 
 separateWords.forEach(createWordPlaceholder);
 
+// för att kunna disolay correct guess; 
+//   -- ta reda på vilken position i array separateWords som correctGuess har
+//   -- ersätt placeholder på den positionen med correctGuess
+
+// const displayCorrectGuess = () => {
+
+// }
+
 
 // check right guesses
 let correctGuesses = [];
 let wrongGuesses = [];
 let userInput; 
+
+
+
 
 document.querySelector("#user-interaction").addEventListener("submit", function (event) {
     event.preventDefault();
@@ -53,6 +64,7 @@ document.querySelector("#user-interaction").addEventListener("submit", function 
 console.log(userInput);
 console.log(correctGuesses);
 
+
 // Function displaying song in frontend - use with adding class to display word when userInput === word of song string
 const displaySong = () => {
     const newPara  = document.createElement("p");
@@ -60,22 +72,10 @@ const displaySong = () => {
     document.querySelector(".song-para").appendChild(newPara);
 }
 
-const displayCorrectGuess = () => {
 
-}
-
-//Handling cancel button
-
-
-
-// instead of on H1 do it on cancel button! 
+//Handling cancel button - instead of on H1 do it on cancel button and "page reload"
 const clickFunctions = () => alert ("Done playing already?");
 
 document.querySelector("h1").onclick = () => clickFunctions();
-
-
-
-
-
 
 

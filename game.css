@@ -4,6 +4,8 @@
     --contrast-color: #6192b0;
     --secondary-text-color: rgb(50, 11, 90);
     --secondary-bg-color: #ede15c;
+
+    --spacing-base: 8px;
 }
 
 * {
@@ -53,13 +55,13 @@ header {
 
 }
 
-.user-interaction {
-    /* display: flex; */
+#user-interaction {
+    margin: var(--spacing-base);
+    padding: var(--spacing-base);
 }
 
-.user-input {
-    border: var(--contrast-color);
+#user-input {
     font-family: inherit;
-    margin: 24px;
+    
 }
 
