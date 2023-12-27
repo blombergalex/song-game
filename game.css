@@ -39,8 +39,10 @@ button {
     border: 0px;
     border-radius: 5px;
     color: var(--primary-text-color);
+    cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
+    pointer-events:stroke;
     padding: var(--spacing-base);
     text-transform: capitalize;
 }
@@ -56,13 +58,13 @@ button {
 }
 
 .game-box {
+    align-items: center;
     border-top: 50%;
     color: var(--primary-text-color);
     display: flex;
     flex-direction: column;
     flex-grow: 1;
     height: auto;
-    align-items: center;
     padding: var(--spacing-medium);
 }
 
@@ -100,5 +102,18 @@ button {
 
 #game-box button {
     border: none;
+}
+
+.visible {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 2s linear;
+}
+
+.hidden {
+    display: none;
+    transition: opacity 2s linear;
+
 }
 

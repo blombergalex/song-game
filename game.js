@@ -1,12 +1,10 @@
 $(() => {
     console.log("jquery");
 
-$(".game-box").hide();
-
 $("#start-btn").click(function() {
 
-    $("#start-btn").hide();
-    $(".game-box").show();
+    $("#start-btn").toggleClass("hidden");  
+    $(".game-box").toggleClass("hidden", false  );
 
     const songs = [
         "another one bites the dust",
