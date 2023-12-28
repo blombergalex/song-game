@@ -7,11 +7,11 @@ $("#start-btn").click(function() {
     $(".game-box").toggleClass("hidden", false);
 
     const songs = [
-        "another one bites the dust",
-        "hit the road jack",
-        "i want to break free",
-        "ah ha ha ha stayin alive",
-        "gimme gimme gimme a man after midnight",
+        "Another one bites the dust",
+        "Hit the road jack",
+        "I want to break free",
+        "Take a chance on me",
+        "Here is another part of lyrics",
     ];
 
     // Function generating song
@@ -41,16 +41,13 @@ $("#start-btn").click(function() {
         $(".song-para div").eq(index).text(userInput);
     }
 
-    //vid rätt gissning, ersätt word-placeholder med ordet. 
-    //Kolla hur pass in mha backticks 
-
-
     // check right guesses
     let correctGuesses = [];
     let wrongGuesses = [];
     let userInput; 
 
 
+    // on submit
     $("#user-interaction").submit(function (event) { 
         event.preventDefault();
         userInput = $("#user-input").val();
@@ -58,33 +55,14 @@ $("#start-btn").click(function() {
         $("#user-input").val('');
 
         for (let i = 0; i < songWords.length; i++) {
-            if (songWords[i] === userInput.toLowerCase()) {
+            if (songWords[i].toLowerCase() === userInput.toLowerCase()) {
                 displayCorrectGuess(i, userInput.toLowerCase());
                 break;
             }
         }
 
-        // if 
-
-        // if ($.inArray(userInput.toLowerCase(), songWords) !== -1) {
-        //     console.log("Song includes " + userInput);
-        //     $(songWords).each(() => createWordPlaceholder(userInput));
-        // } else {
-        //     console.log ("Wrong guess");
-        // }
-
-        // if (songWords.includes((userInput).toLowerCase())) {
-        
-        //     console.log("Song includes " + userInput)
-        //     correctGuesses.push(userInput);
-        //     console.log(correctGuesses);
-        // } else if (!songWords.includes((userInput).toLowerCase())) {
-        //     wrongGuesses.push(userInput);
-        //     console.log(wrongGuesses);
     });
 
-    // console.log(userInput);
-    // console.log(correctGuesses);
 
 
     //if correct! Change H3 to $("h3").text("You are correct!") ;

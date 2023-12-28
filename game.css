@@ -48,8 +48,8 @@ button {
     text-transform: capitalize;
 }
 
-#start-page {
- 
+#start-page > div {
+    flex-grow: 1;
 }
 
 #start-btn {
@@ -81,8 +81,10 @@ button {
     border-bottom: 1px solid var(--contrast-color);
     display: flex;
     font-weight: 500;
+    font-size: 1rem;
     height: 2rem;
     justify-content: center;
+    text-align: center;
     margin: var(--spacing-base);
     width: 3rem;
 }
@@ -121,8 +123,9 @@ button {
 }
 
 .visible {
+    text-align: center;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     padding: var(--spacing-large);
     visibility: visible;
     opacity: 1;
