@@ -3,8 +3,8 @@ $(() => {
 
 $("#start-btn").click(function() {
 
-    $("#start-btn").toggleClass("hidden");  
-    $(".game-box").toggleClass("hidden", false  );
+    $("#start-page").toggleClass("hidden");  
+    $(".game-box").toggleClass("hidden", false);
 
     const songs = [
         "another one bites the dust",
@@ -19,8 +19,6 @@ $("#start-btn").click(function() {
         return songs[Math.floor(Math.random() * songs.length)];
     }
 
-
-
     // Split song-string 
 
     let songWords = (randomSong().split(' '));
@@ -31,14 +29,20 @@ $("#start-btn").click(function() {
     // turn each value in array to placeHolder:
     //Skapa placeholder-funktion som tar vad som helst som parameter och sätter som placeholder
 
-    const createWordPlaceholder = (placeholder) => {
+    const createWordPlaceholder = (text) => {
         const placeHolder =  document.createElement("div");
-        // $(placeHolder).text = placeHolder;
-        $(".song-para").append(placeHolder(" _ "));
+        $(placeHolder).text(text);
+        $(".song-para").append(placeHolder);
     }
 
+    $(songWords).each(() => createWordPlaceholder(""));
 
-    // $(songWords).each(() => createWordPlaceholder("_"));
+    const displayCorrectGuess = (index, userInput) => {
+        $(".song-para div").eq(index).text(userInput);
+    }
+
+    //vid rätt gissning, ersätt word-placeholder med ordet. 
+    //Kolla hur pass in mha backticks 
 
 
     // check right guesses
@@ -47,22 +51,27 @@ $("#start-btn").click(function() {
     let userInput; 
 
 
-
-
     $("#user-interaction").submit(function (event) { 
         event.preventDefault();
         userInput = $("#user-input").val();
         console.log("User guessed: " + userInput);
         $("#user-input").val('');
 
-        if ($.inArray(userInput.toLowerCase(), songWords) !== -1) {
-            console.log("Song includes " + userInput);
-            // $(songWords).each(() => createWordPlaceholder(userInput));
-            //Lägg placeholder-funktion här och ta userInput som placeholder = 
-            // "-" ersätts med userInput om den finns i songWords array! 
-        } else {
-            console.log ("Wrong guess");
+        for (let i = 0; i < songWords.length; i++) {
+            if (songWords[i] === userInput.toLowerCase()) {
+                displayCorrectGuess(i, userInput.toLowerCase());
+                break;
+            }
         }
+
+        // if 
+
+        // if ($.inArray(userInput.toLowerCase(), songWords) !== -1) {
+        //     console.log("Song includes " + userInput);
+        //     $(songWords).each(() => createWordPlaceholder(userInput));
+        // } else {
+        //     console.log ("Wrong guess");
+        // }
 
         // if (songWords.includes((userInput).toLowerCase())) {
         
@@ -74,36 +83,8 @@ $("#start-btn").click(function() {
         //     console.log(wrongGuesses);
     });
 
-    console.log(userInput);
-    console.log(correctGuesses);
-
-
-    // för att kunna display correct guess; 
-    //   -- ta reda på vilken position i array songWords som correctGuess har
-    //   -- ersätt placeholder på den positionen med correctGuess
-    
-    // const displayCorrectGuess = () => {
-
-    // }
-
-    //Använd jQuery .eq method för att ta reda på position i songWords-array som correctGuess har, för att sedan kunna
-    // displaya det ordet i frontend. 
-
-
-    // Function to find the index of a value in songWords based on correctGuesses
-    const findIndexInsongWords = (value) => {
-        return songWords.indexOf(value);
-    };
-
-    // Loop through correctGuesses and find the indices in songWords
-    $.each(correctGuesses, function (index, value) {
-        var indexOfValue = findIndexInsongWords(value);
-        console.log("Index of '" + value + "' in songWords: " + indexOfValue);
-    });
-
-    findIndexInsongWords();
-
-
+    // console.log(userInput);
+    // console.log(correctGuesses);
 
 
     //if correct! Change H3 to $("h3").text("You are correct!") ;

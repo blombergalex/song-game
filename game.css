@@ -5,6 +5,7 @@
     --secondary-text-color: #05639d;
     --secondary-bg-color: #ffdb64;
 
+    --spacing-small: 5px;
     --spacing-base: 8px;
     --spacing-medium: 24px;
     --spacing-large: 48px;
@@ -37,7 +38,7 @@ header {
 button {
     background-color: var(--secondary-bg-color);
     border: 0px;
-    border-radius: 5px;
+    border-radius: var(--spacing-small);
     color: var(--primary-text-color);
     cursor: pointer;
     font-size: 1rem;
@@ -48,9 +49,7 @@ button {
 }
 
 #start-page {
-    display: flex;
-    justify-content: center;
-    padding: var(--spacing-large);
+ 
 }
 
 #start-btn {
@@ -72,22 +71,37 @@ button {
     color: var(--secondary-text-color);
     display: flex;
     font-size: 1.8rem;
-    text-align: center;
+    flex-grow: 1    ;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: var(--spacing-medium);
 }
 
 .song-para > div {
-    color: var(--secondary-text-color);
-    margin: 2px;
+    border-bottom: 1px solid var(--contrast-color);
+    display: flex;
+    font-weight: 500;
+    height: 2rem;
+    justify-content: center;
+    margin: var(--spacing-base);
+    width: 3rem;
+}
+
+.song-para:nth-child(1) {
+    text-transform: uppercase;
 }
 
 .game-box h3 {
     font-size: 1.5rem;
+    /* flex-grow: 1; */
 }
 
 #user-interaction {
     border-radius: 2px;
     background-color: var(--contrast-color);
+    display: flex;
     flex-direction: column;
+    justify-content: end;
     margin: var(--spacing-medium);
     padding: 16px var(--spacing-large);
 }
@@ -98,14 +112,18 @@ button {
     border-radius: 2px;
     border: none;
     padding: var(--spacing-base);
+    margin-bottom: var(--spacing-small);
 }
 
 #game-box button {
     border: none;
+    width: 100%;
 }
 
 .visible {
-    display: block;
+    display: flex;
+    justify-content: center;
+    padding: var(--spacing-large);
     visibility: visible;
     opacity: 1;
     transition: opacity 2s linear;
