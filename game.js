@@ -11,7 +11,6 @@ $("#start-btn").click(function() {
         "Hit the road jack",
         "I want to break free",
         "Take a chance on me",
-        "Here is another part of lyrics",
     ];
 
     // Function generating song
@@ -42,12 +41,13 @@ $("#start-btn").click(function() {
     }
 
     // check right guesses
-    let correctGuesses = [];
+    let correctSong = [];
+    let correctWordGuess = [];
     let wrongGuesses = [];
     let userInput; 
 
 
-    // on submit
+    // ON SUBMIT
     $("#user-interaction").submit(function (event) { 
         event.preventDefault();
         userInput = $("#user-input").val();
@@ -57,23 +57,32 @@ $("#start-btn").click(function() {
         for (let i = 0; i < songWords.length; i++) {
             if (songWords[i].toLowerCase() === userInput.toLowerCase()) {
                 displayCorrectGuess(i, userInput.toLowerCase());
+                correctWordGuess.push(userInput);
+                console.log(correctWordGuess);
                 break;
             }
         }
 
+        if (songWords.length === correctWordGuess.length) {
+            correctSong.push(songWords);
+            $(".message").text("You got it!");
+
+            console.log("User guesed the right song!")
+        }
+
+        console.log(correctSong);
+
     });
+
+    
+
+    
+
 
 
 
     //if correct! Change H3 to $("h3").text("You are correct!") ;
 
-
-    // Function displaying song in frontend - use with adding class to display word when userInput === word of song string
-    const displaySong = () => {
-        const newPara  = document.createElement("p");
-        newPara.innerText = (randomSong());   //use append to add text, see review js file
-        document.querySelector(".song-para").appendChild(newPara);
-    }
 
 
     //Handling cancel button - instead of on H1 do it on cancel button and "page reload"
