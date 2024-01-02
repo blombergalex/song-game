@@ -13,10 +13,27 @@ $("#start-btn").click(function() {
         "Take a chance on me",
     ];
 
+    const audioArray = [
+        "another-one-bites.mp3", 
+        "hit-the-road-jack.mp3", 
+        "i-want-to-break-free.mp3",
+        "take-a-chance.mp3"
+    ];
+
+     // const audioElement = new Audio("./audio/take-a-chance.mp3");
+    // audioElement.play();
+
     // Function generating song
     const randomSong = () => {
         return songs[Math.floor(Math.random() * songs.length)];
-    }
+    } 
+    
+    //play song
+    const audioIndex = songs.indexOf(randomSong());
+    console.log(audioIndex);
+    // console.log(audioIndex);
+    const audio = new Audio(audioArray[audioIndex]);
+    audio.play();
 
     // Split song-string 
 
@@ -25,8 +42,6 @@ $("#start-btn").click(function() {
     console.log("Is songWords an array: " + Array.isArray(songWords));
 
 
-    // turn each value in array to placeHolder:
-    //Skapa placeholder-funktion som tar vad som helst som parameter och sätter som placeholder
 
     const createWordPlaceholder = (text) => {
         const placeHolder =  document.createElement("div");
@@ -43,8 +58,9 @@ $("#start-btn").click(function() {
     // check right guesses
     let correctSong = [];
     let correctWordGuess = [];
-    let wrongGuesses = [];
+    let wrongGuess = [];
     let userInput; 
+
 
 
     // ON SUBMIT
@@ -60,14 +76,15 @@ $("#start-btn").click(function() {
                 correctWordGuess.push(userInput);
                 console.log(correctWordGuess);
                 break;
+            } else {
+                wrongGuess.push(userInput);
+
             }
         }
 
         if (songWords.length === correctWordGuess.length) {
             correctSong.push(songWords);
-            $(".message").text("You got it!");
-
-            console.log("User guesed the right song!")
+            $(".game-box.txt").text("You got it!");
         }
 
         console.log(correctSong);
@@ -77,11 +94,6 @@ $("#start-btn").click(function() {
     
 
     
-
-
-
-
-    //if correct! Change H3 to $("h3").text("You are correct!") ;
 
 
 

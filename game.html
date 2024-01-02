@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hey Babareeba</title>
     <link rel="stylesheet" href="./game.css">
+    <link rel="stylesheet" href="./typography.css">
     <script src="./jquery-3.7.1.min.js"></script>
     <script src="./game.js" defer></script>
 </head>
@@ -14,13 +15,14 @@
     </header>
     <div id="start-page" class="visible">
         <div>
-            <p>In this game, the goal is to guess the correct lyrics of the song.</p>
+            <p class="start-page-txt">The goal of this game is to guess the name of the song. Click to play!</p>
         </div>
         <button id="start-btn">Start game</button>
     </div>
     <div class="game-box hidden">
-        <h3 class="message">What song might this be?</h3>
+        <h3 class="game-box-txt">What song might this be?</h3>
         <div class="song-para"></div>
+        <div class="guess-message"></div>
         <form id="user-interaction">
             <label for="user-input"></label>
             <input type="text" id="user-input" placeholder="Enter guess!" required> 
