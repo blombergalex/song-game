@@ -1,68 +1,27 @@
-Break down project in pseudo code 
----------------------------------------
 
-My song guessing game
 
-Computer chooses 
-    - random string of song out of array with multiple songs 
-    - computer displays amount of words with lines (seven words in lyrics = seven empty lines)
+My song guessing game -- Heeeey babareba!
 
-Skapa en funktion som 
-1. tar den genererade random sången ✅
-2. splittar sången (som är en string) till separata ord i en array ✅
-3. Tar number av values in the array and create _ for each value - genom att välja varje value från arrayn ✅
-4. Display each _ in the html. ✅
 
-skapa annan funktion som omvandlar "_" till ord när userinput överensstämmer med ett värde i randomSong array:
-    1. ta värdet på user input 
-    2. ställ värdet mot varje värde i sångArrayn genom att loopa igenom
-    3. om userInput == värde i sång Array => lägg till class på ordet i the original songArray som gör att den visas i frontend, 
-        else - meddela att det är fel (med text som poppar upp?)
 
-visa ordet istället för _ i frontend
+
 hantera user input
 - toLowerCase ✅
-- gör så blanks (white space) är tillåtet och gissning ändå blir rätt
+- gör så blanks (white space) är tillåtet och gissning ändå blir rätt ---- inför REGEX!
 
-
-Player 
-    - starts game (start button with click event)
-        - wrap the whole thing in alert with "Do you want to play?"
+Essential:
+- hantera cancel button och refresh page - meddelande om att sluta spela
+- winner message - när alla ord i songWords är uppfyllda, display winner message.   
+- styling - 
         
-    - player guesses word for word:
-        - computer listens to all of user's input, any correct words fill in empty lines. Incorrect words = wrong answer, lose life?
 
-    - har möjlighet att gissa utifrån 25 ord som kan ingå i sången - knappar med ord som genereras från listan av sånger och ord! 
-        istället för att användaren behöver skriva in hela ord själv (obs är det krav på user input?? Kan jag använda knappar?)
+för att komma vidare: 
+skapa funktioner!! Det är det som behövs :)
+Funktioner är allt!
 
-skapa möjlighet för användare att gissa
-alternativ 1. input field för att skriva ord - tangentbord visas alltid. (fixa för mobile)
-    se https://www.altcademy.com/blog/how-to-get-user-input-in-javascript/ 
-
-alternativ 2. ord-knappar som alternativ som användaren kan klicka på. Lägg till i listan över låtar så varje låt också 
-är knuten till en rad ord där ett antal är rätt och ett antal är random (antingen manauell eller att det genereras 
-t ex 10-15 till ord på random från en annan array som används för varje omgång med ny låt.)
-
-kolla user input mot ord
-- ev använda string method includes to check if the string of the correct word includes what the user typed
-    (alt contains depending on if I'm handling a string or array.)
-
-Use jQuery .each method to get index of array!!!!!
-
-Notes
-When creating a new array out of info from user input, use .isArray to check that I am actaully using an array. 
-
-
-
-
-while loop: 
-do {visa meddelande om att enter guess}
-while userInput !== correctGuesses {
-    visa meddelande om att fortsätta gissa
-}. /
-Använd do while loop för att det ska köras även innan första user input! 
-OBS! Inte nödvändigt om jag inte använder prompt. Ska vara med i prompt game pga prompten stoppar while loop,
-as soon as the prompt is resolved the while loop continues. Can't use a while loop in the console. 
+1. funktion som känner av om alla placeholders är ersatta av ord --> turn H3 -> correct guess
+2. funktion som hänger ihop med randomsong och spelar upp rätt melodi
+3. funktion som räknar ner "liv" för varje ord som inte är rätt
 
 
 
@@ -70,3 +29,4 @@ Extras:
 - option to play a few seconds of an instrumental version of song - see drumkit challenge från Udemy kurs för hur spela mp3-fil
 - after three wrong guesses, encouraging message such as "You'll get it soon, try again!"
 - option to choose level easy or hard. Hard being a line from another part than lyrics. 
+- 
