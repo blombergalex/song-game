@@ -20,27 +20,24 @@ $("#start-btn").click(function() {
         "take-a-chance.mp3"
     ];
 
-     // const audioElement = new Audio("./audio/take-a-chance.mp3");
-    // audioElement.play();
 
     // Function generating song
-    const randomSong = () => {
-        return songs[Math.floor(Math.random() * songs.length)];
-    } 
+
+    const randomSong = () => songs[randomIndex];
+    const randomIndex = [Math.floor(Math.random() * songs.length)];
     
-    //play song
-    const audioIndex = songs.indexOf(randomSong());
-    console.log(audioIndex);
-    // console.log(audioIndex);
-    const audio = new Audio(audioArray[audioIndex]);
-    audio.play();
+    const playSong = () => {
+        const audio = new Audio(audioArray[randomIndex]);
+        audio.play();
+    };
+    
+    playSong();
 
     // Split song-string 
 
     let songWords = (randomSong().split(' '));
     console.log(songWords);
     console.log("Is songWords an array: " + Array.isArray(songWords));
-
 
 
     const createWordPlaceholder = (text) => {
@@ -61,8 +58,6 @@ $("#start-btn").click(function() {
     let wrongGuess = [];
     let userInput; 
 
-
-
     // ON SUBMIT
     $("#user-interaction").submit(function (event) { 
         event.preventDefault();
@@ -75,16 +70,16 @@ $("#start-btn").click(function() {
                 displayCorrectGuess(i, userInput.toLowerCase());
                 correctWordGuess.push(userInput);
                 console.log(correctWordGuess);
+    
                 break;
             } else {
                 wrongGuess.push(userInput);
-
             }
         }
 
         if (songWords.length === correctWordGuess.length) {
             correctSong.push(songWords);
-            $(".game-box.txt").text("You got it!");
+            $(".game-box-txt").text("You got it!");
         }
 
         console.log(correctSong);

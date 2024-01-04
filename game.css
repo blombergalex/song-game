@@ -33,7 +33,7 @@ header {
     color: var(--secondary-text-color);
     font-family: 'rubikdoodleshadow', 'system-ui';
     font-size: 1.4rem;
-    padding: var(--spacing-small);
+    padding: var(--spacing-small) var(--spacing-medium);
     text-align: center;
 }
 
@@ -66,7 +66,6 @@ button {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    font-family: ;
     height: auto;
     padding: var(--spacing-medium);
 }
@@ -130,13 +129,12 @@ button {
     opacity: 1;
     padding: var(--spacing-large);
     text-align: center;
-    
-    transition: opacity 2s linear;
+    /* transition: opacity 2s linear; */
     visibility: visible;
 }
 
 .hidden {
     display: none;
-    transition: opacity 2s linear;
+    /* transition: opacity 2s linear; */
 }
 
