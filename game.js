@@ -24,7 +24,6 @@ $(() => {
         "never-gonna-give-you-up.mp3"
     ];
             
-    //Generate song
     const randomIndex = [Math.floor(Math.random() * songs.length)];
     const randomSong = () => songs[randomIndex];
     let audio;
