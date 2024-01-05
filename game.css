@@ -87,7 +87,6 @@ button {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    /* height: 100vh; */
     justify-content: center;
     padding: var(--spacing-medium);
     width: 100vw;
@@ -127,7 +126,6 @@ button {
 .song-para {
     color: var(--secondary-text-color);
     display: flex;
-    /* flex-grow: 1; */
     flex-wrap: wrap;
     justify-content: center;
     padding: var(--spacing-base);

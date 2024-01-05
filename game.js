@@ -50,14 +50,9 @@ $(() => {
         }
     });
 
-    
-    // Split song-string 
-
-
     const songWords = (randomSong().split(' '));
     console.log(songWords);
     console.log("Is songWords an array: " + Array.isArray(songWords));
-
 
     const createWordPlaceholder = (text) => {
         const placeHolder =  document.createElement("div");
@@ -81,8 +76,6 @@ $(() => {
     let correctWordGuess = [];
     let wrongGuess = [];
     let userInput; 
-
-    // ON SUBMIT
 
     const submit = (event) => { 
         event.preventDefault();
@@ -134,6 +127,5 @@ $(() => {
     $("#cancel-btn").click(showPopup);
     $("#confirm-quit").click(backToHome);
     $("#resume").click(resumeGame);
-
 
 });
