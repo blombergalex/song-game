@@ -2,16 +2,26 @@ $(() => {
 
     const songs = [
         "Another one bites the dust",
-        "Hit the road jack",
+        "Hit the road Jack",
         "I want to break free",
         "Take a chance on me",
+        "Blame it on the boogie",
+        "Dont stop believin",
+        "Sweet dreams are made of this",
+        "YMCA",
+        "Never gonna give you up"
     ];
 
     const audioArray = [
         "another-one-bites.mp3", 
         "hit-the-road-jack.mp3", 
         "i-want-to-break-free.mp3",
-        "take-a-chance.mp3"
+        "take-a-chance.mp3",
+        "blame-it-on-the-boogie.mp3",
+        "dont-stop-believin.mp3",
+        "sweet-dreams.mp3",
+        "ymca.mp3",
+        "never-gonna-give-you-up.mp3"
     ];
             
     //Generate song

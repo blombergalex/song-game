@@ -29,4 +29,4 @@ Extras:
 - option to play a few seconds of an instrumental version of song - see drumkit challenge från Udemy kurs för hur spela mp3-fil
 - after three wrong guesses, encouraging message such as "You'll get it soon, try again!"
 - option to choose level easy or hard. Hard being a line from another part than lyrics. 
-- 
+- Correct guess: förstora och snurra "Hey Babareeba!" and play sound, 
