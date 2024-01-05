@@ -1,14 +1,4 @@
 $(() => {
-    console.log("jquery");
-
-// 
-
-$("#start-btn").click(function() {
-
-    $("#start-page").toggleClass("hidden");  
-    $(".game-box").toggleClass("hidden", false);
- 
-    
 
     const songs = [
         "Another one bites the dust",
@@ -23,12 +13,10 @@ $("#start-btn").click(function() {
         "i-want-to-break-free.mp3",
         "take-a-chance.mp3"
     ];
-
-
-    // Function generating song
-
-    const randomSong = () => songs[randomIndex];
+            
+    //Generate song
     const randomIndex = [Math.floor(Math.random() * songs.length)];
+    const randomSong = () => songs[randomIndex];
     let audio;
 
     const playSong = () => {
@@ -41,9 +29,7 @@ $("#start-btn").click(function() {
             audio.pause();
             console.log("Song paused");
         }
-    }
-
-    playSong();
+    };
 
     $("#sound-btn").click(function () {
         $("#sound-btn").toggleClass("inactive");
@@ -54,10 +40,11 @@ $("#start-btn").click(function() {
         }
     });
 
-
+    
     // Split song-string 
 
-    let songWords = (randomSong().split(' '));
+
+    const songWords = (randomSong().split(' '));
     console.log(songWords);
     console.log("Is songWords an array: " + Array.isArray(songWords));
 
@@ -74,21 +61,27 @@ $("#start-btn").click(function() {
         $(".song-para div").eq(index).text(userInput);
     }
 
-    // check right guesses
+    const startGame = () => {
+        $("#start-page").toggleClass("hidden");  
+        $(".game-box").toggleClass("hidden", false);
+        playSong();
+    };
+
     let correctSong = [];
     let correctWordGuess = [];
     let wrongGuess = [];
     let userInput; 
 
     // ON SUBMIT
-    $("#user-interaction").submit(function (event) { 
+
+    const submit = (event) => { 
         event.preventDefault();
         userInput = $("#user-input").val();
         console.log("User guessed: " + userInput);
         $("#user-input").val('');
 
         for (let i = 0; i < songWords.length; i++) {
-            if (songWords[i].toLowerCase() === userInput.toLowerCase()) {
+            if (songWords[i].toLowerCase() === userInput.trim().toLowerCase()) {
                 displayCorrectGuess(i, userInput.toLowerCase());
                 correctWordGuess.push(userInput);
                 console.log(correctWordGuess);
@@ -102,22 +95,35 @@ $("#start-btn").click(function() {
         if (songWords.length === correctWordGuess.length) {
             correctSong.push(songWords);
             $("#game-box-txt").text("You got it!");
+            $("#game-box-txt").addClass("spin");
+            pauseSong();
+        }
+    };
+     
+
+    $("#start-btn").click(startGame);
+    $("#user-interaction").submit(submit);
+
+
+    const showPopup = () => {
+        $(".game-box").addClass("blur");
+        $("#cancel-popup").toggleClass("hidden");
+        pauseSong();
         }
 
-        console.log(correctSong);
+    const backToHome = () => {
+        location.reload();
+    }
 
-    });
+    const resumeGame = () => {
+        $("#cancel-popup").toggleClass("hidden");
+        playSong();
+        $(".game-box").removeClass("blur");
+    }
 
-    
+    $("#cancel-btn").click(showPopup);
+    $("#confirm-quit").click(backToHome);
+    $("#resume").click(resumeGame);
 
-    
 
-
-
-    //Handling cancel button - instead of on H1 do it on cancel button and "page reload"
-    const clickFunctions = () => alert ("Done playing already?");
-
-    document.querySelector("h1").onclick = () => clickFunctions();
-
-    });
 });
