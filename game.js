@@ -1,10 +1,14 @@
 $(() => {
     console.log("jquery");
 
+// 
+
 $("#start-btn").click(function() {
 
     $("#start-page").toggleClass("hidden");  
     $(".game-box").toggleClass("hidden", false);
+ 
+    
 
     const songs = [
         "Another one bites the dust",
@@ -25,13 +29,31 @@ $("#start-btn").click(function() {
 
     const randomSong = () => songs[randomIndex];
     const randomIndex = [Math.floor(Math.random() * songs.length)];
-    
+    let audio;
+
     const playSong = () => {
-        const audio = new Audio(audioArray[randomIndex]);
+        audio = new Audio(audioArray[randomIndex]);
         audio.play();
     };
-    
+
+    const pauseSong = () => {
+        if (audio) {
+            audio.pause();
+            console.log("Song paused");
+        }
+    }
+
     playSong();
+
+    $("#sound-btn").click(function () {
+        $("#sound-btn").toggleClass("inactive");
+        if ($("#sound-btn").hasClass("inactive")){
+            pauseSong();
+        } else {
+            playSong();
+        }
+    });
+
 
     // Split song-string 
 
@@ -79,7 +101,7 @@ $("#start-btn").click(function() {
 
         if (songWords.length === correctWordGuess.length) {
             correctSong.push(songWords);
-            $(".game-box-txt").text("You got it!");
+            $("#game-box-txt").text("You got it!");
         }
 
         console.log(correctSong);

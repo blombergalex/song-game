@@ -59,8 +59,23 @@ button {
    margin: var(--spacing-base);
 }
 
+.option-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.option-buttons > button {
+    height: 35px;
+    width: 35px;
+    margin: 2px;
+}
+
+#sound-btn {
+    padding-bottom: 4px;
+}
+
 .game-box {
-    align-items: center;
+    /* align-items: center; */
     border-top: 50%;
     color: var(--primary-text-color);
     display: flex;
@@ -81,13 +96,14 @@ button {
 }
 
 .song-para > div {
-    border-bottom: 1px solid var(--contrast-color);
+    border-bottom: 3px solid var(--contrast-color);
     display: flex;
-    font-weight: 500;
+    font-weight: 800;
     font-size: 1rem;
     height: 2rem;
     justify-content: center;
     text-align: center;
+    text-transform: uppercase;
     margin: var(--spacing-base);
     width: 3rem;
 }
@@ -96,8 +112,10 @@ button {
     text-transform: uppercase;
 }
 
-.game-box h3 {
+#game-box-txt {
+    text-align: center;
     font-size: 1.5rem;
+    align-items: center;
 }
 
 #user-interaction {
@@ -129,12 +147,15 @@ button {
     opacity: 1;
     padding: var(--spacing-large);
     text-align: center;
-    /* transition: opacity 2s linear; */
     visibility: visible;
 }
 
 .hidden {
     display: none;
-    /* transition: opacity 2s linear; */
 }
 
+.inactive {
+    background-color: lightgray;
+    background-color: gray;
+    text-decoration: 2px line-through;
+}
