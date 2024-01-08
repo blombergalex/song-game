@@ -40,7 +40,7 @@ $(() => {
         }
     };
 
-    $("#sound-btn").click(function () {
+    $("#sound-btn").on('click', function () {
         $("#sound-btn").toggleClass("inactive");
         if ($("#sound-btn").hasClass("inactive")){
             pauseSong();
