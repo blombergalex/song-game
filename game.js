@@ -102,10 +102,8 @@ $(() => {
         }
     };
      
-
-    $("#start-btn").click(startGame);
+    $("#start-btn").on('click', startGame);
     $("#user-interaction").submit(submit);
-
 
     const showPopup = () => {
         $(".game-box").addClass("blur");
@@ -123,8 +121,8 @@ $(() => {
         $(".game-box").removeClass("blur");
     }
 
-    $("#cancel-btn").click(showPopup);
-    $("#confirm-quit").click(backToHome);
-    $("#resume").click(resumeGame);
+    $("#cancel-btn").on('click',showPopup);
+    $("#confirm-quit").on('click',backToHome);
+    $("#resume").on('click', resumeGame);
 
 });

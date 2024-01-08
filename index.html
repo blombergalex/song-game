@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey Babareeba</title>
+    <link rel="icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="./game.css">
+    <link rel="stylesheet" href="./typography.css">
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="./game.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Hey Babareeba!</h1>
+    </header>
+    <div id="start-page" class="visible">
+        <div>
+            <p class="start-page-txt">The goal of this game is to guess the name of the song. </p>
+            <p class="start-page-txt>">Click to play!</p>
+        </div>
+        <button id="start-btn">Start game</button>
+    </div>
+    <div id="cancel-popup" class="hidden">
+        </p>Have you finished playing?</p>
+        <div>
+            <button id="confirm-quit">Quit</button>
+            <button id="resume">Resume</button>
+        </div>
+    </div>
+    <div class="game-box hidden">
+        <div class="option-buttons">
+            <button id="cancel-btn">X</button>
+            <button id="sound-btn" class="active">&#128266;</button>
+        </div>
+        <p id="game-box-txt">What song might this be?</p>
+        <div class="song-para"></div>
+        <div class="guess-message"></div>
+        <form id="user-interaction">
+            <label for="user-input"></label>
+            <input type="text" id="user-input" placeholder="Enter guess!" required> 
+            <button>Submit</button>
+        </form>
+    </div>
+</body>
+</html> 
