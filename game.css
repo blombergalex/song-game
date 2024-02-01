@@ -149,6 +149,17 @@ button {
     text-transform: uppercase;
 }
 
+.display-n-fade {
+    opacity: 1;
+    animation: fade 3s ease forwards;
+}
+
+@keyframes fade {
+    to {
+        opacity: 0;
+    }
+}
+
 #user-interaction {
     border-radius: 2px;
     background-color: var(--contrast-color);

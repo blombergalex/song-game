@@ -71,7 +71,22 @@ $(() => {
         playSong();
     };
 
-    let correctSong = [];
+    correctMessage = () => {
+        $(".guess-message").append(`
+        <p class="display-n-fade">That's right!</p>
+        `)
+    }
+
+    wrongMessage = () => {
+        $(".guess-message").append(`
+        <p class="display-n-fade">Not the one</p>
+        `)
+    }
+
+    // correctMessage();
+    // wrongMessage();
+
+    // let correctSong = [];
     let correctWordGuess = [];
     let wrongGuess = [];
     let userInput; 
@@ -87,19 +102,25 @@ $(() => {
                 displayCorrectGuess(i, userInput.toLowerCase());
                 correctWordGuess.push(userInput);
                 console.log(correctWordGuess);
-    
+                correctMessage();
                 break;
-            } else {
-                wrongGuess.push(userInput);
-            }
-        }
+            // } else {
+            //     // wrongGuess.push(userInput);
+            //     // wrongMessage();
+            // }
+        }};
+
+        if (!songWords[i].toLowerCase() === userInput.trim().toLowerCase()) {
+            console.log("wrong gueesssss");
+        };
+
 
         if (songWords.length === correctWordGuess.length) {
-            correctSong.push(songWords);
+            // correctSong.push(songWords);
             $("#game-box-txt").text("You got it!");
             $("#game-box-txt").addClass("spin");
             pauseSong();
-        }
+        };
     };
      
     $("#start-btn").on('click', startGame);
